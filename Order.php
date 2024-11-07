@@ -13,6 +13,19 @@
 //cette fonction ajoute un produit à mon tableau de produit
 //elle ajoute aussi le prix du produit au prix total
 //elle ne se réalise que si la commande est en cours
+
+
+
+//Je créai une méthode __construct et lui passe en paramètre la variable $customerName, $status,$totalPrice
+//quand l'instance est créée alors le __constuct s'applique
+    public function __construct($customerName, $status, $totalPrice) {
+            $this->customerName = $customerName;
+            $this->status = $status;
+            $this->totalPrice = $totalPrice;
+            $this->id = uniqId();
+    }
+
+
     public function addProduct()
     {
         if ($this->status === "cart") {
@@ -41,7 +54,10 @@
 }
 
             //je fais ma premiere commande :
-    $order1 = new Order();
+    $order1 = new Order("Richard");
+    //Je créai une instance de class avec new et lui passe en
+    // paramètre customerName pour l'identification unique désigné et agir sur l'objet
+
             //j'ajoute mon produit :
     $order1->addProduct();
     $order1->addProduct();
@@ -52,7 +68,12 @@
     $order1->removeProduct();
     var_dump($order1);
 
-    $order2 = new Order();
+    $order2 = new Order("status");
     $order2->addProduct();
     $order2->removeProduct();
     var_dump($order2);
+
+    $order3 = new Order("totalPrice");
+    $order3->addProduct();
+    $order3->removeProduct();
+    var_dump($order3);
