@@ -46,7 +46,9 @@
         //si ces conditions sont remplies je retire le dernier item ajouté avec la "fonction native array_pop()"
     public function removeProduct(){
         if ($this->status === "cart" && count($this->products)!==0) {
+            //array_pop modifie directement le tableau,
             array_pop($this->products);
+            $this->totalPrice -= 3;
         } else if (count($this->products)===0){
             echo ("votre panier est vide");
         }
