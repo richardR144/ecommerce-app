@@ -17,7 +17,7 @@
 
 
 //Je créai une méthode __construct et lui passe en paramètre la variable $customerName, $status,$totalPrice
-//quand l'instance est créée alors le __constuct s'applique
+//quand l'instance de class est créée alors le __constuct s'applique
     public function __construct($customerName, $status, $totalPrice) {
             $this->customerName = $customerName;
             $this->status = $status;
@@ -68,12 +68,12 @@
     $order1->removeProduct();
     var_dump($order1);
 
-    $order2 = new Order("status");
+    $order2 = new Order("pay");
     $order2->addProduct();
-    $order2->removeProduct();
+    $order2->pay();
     var_dump($order2);
 
-    $order3 = new Order("totalPrice");
+    $order3 = new Order(2);
     $order3->addProduct();
     $order3->removeProduct();
     var_dump($order3);
